@@ -1,0 +1,230 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="resumeApp">
+	<head ng-controller="contentController">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Benjamin Nguyen | Resume</title>
+		<link rel="stylesheet" href="css/foundation.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<script src="js/vendor/modernizr.js"></script>
+		<link rel="stylesheet" href="css/app.css" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	</head>
+	<body ng-controller="contentController">
+		<div class="sticky">
+			<nav class="top-bar" data-topbar role="navigation">
+				<ul class="title-area">
+					<li class="name">
+						<h1><a href="#"><b>Ben Nguyen</b></a></h1>
+					</li>
+					<li class="toggle-topbar menu-icon">
+						<a href="#"><span></span></a>
+					</li>
+				</ul>
+				<section class="top-bar-section" style="text-align: center">
+					<ul>
+						<li>
+							<a href="#profile"><i class="fa fa-user fa-lg"></i> Profile</a>
+						</li>
+						<li>
+							<a href="#skills"><i class="fa fa-code fa-lg"></i> Skills</a>
+						</li>
+						<li>
+							<a href="#projects"><i class="fa fa-cubes fa-lg"></i> Projects</a>
+						</li>
+						<li>
+							<a href="#work"><i class="fa fa-building fa-lg"></i> Work Experience</a>
+						</li>
+						<li>
+							<a href="#education"><i class="fa fa-mortar-board fa-lg"></i> Education</a>
+						</li>
+						<li>
+							<a href="#hobbies"><i class="fa fa-coffee fa-lg"></i> Hobbies</a>
+						</li>
+					</ul>
+				</section>
+			</nav>
+		</div>
+		<div class="row">
+			<div class="small-12 columns" style="padding:0px">
+				<a class="anchor" id="profile"></a>
+				<div class="panel">
+					<div class="panel-heading">
+						<i class="fa fa-user fa-lg"></i> Profile
+					</div>
+					<div class="panel-body">
+						<h2>Benjamin D. Nguyen</h2>
+						<h5>Developer</h5>
+						<h6>Bachelor's of Computer Science</h6>
+						<i class="fa fa-globe"></i> Vancouver, BC
+						<br>
+						<i class="fa fa-envelope"></i> bnguyen@outlook.com
+						<br>
+						<a href="http://ca.linkedin.com/pub/benjamin-nguyen/18/752/738/" style="color:#000000"> <i class="fa fa-linkedin-square"></i> LinkedIn Profile</a>
+					</div>
+				</div>
+
+				<a class="anchor" id="skills"></a>
+				<div class="panel" ng-controller="skillsController">
+					<div class="panel-heading">
+						<i class="fa fa-code fa-lg"></i> Skills				
+					</div>
+					<div class="panel-body row">
+
+						<ul class="small-12 medium-3 columns end fa-ul" ng-repeat="group in skillsArray">
+							<li class="hover" ng-repeat="skill in group | orderBy:sm_name">
+								<i class="fa-li fa fa-angle-right"></i>{{skill.s_name}}
+							</li>
+						</ul>
+
+					</div>
+				</div>
+
+				<a class="anchor" id="projects"></a>
+				<div class="panel" ng-controller="projectsController">
+					<div class="panel-heading">
+						<i class="fa fa-cubes fa-lg"></i> Projects
+						<span class="right">							 
+							<a href="#" data-dropdown="drop0" aria-controls="drop0" aria-expanded="false" class="dropdown">
+								Sort By <i class="fa fa-caret-down"></i>
+							</a> <i class="fa fa-sort-amount-asc"></i> <i class="fa fa-sort-amount-desc"></i> 
+							<br>
+							<ul id="drop0" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+								<li>
+									<a href="#">Name</a>
+								</li>
+								<li>
+									<a href="#">Type</a>
+								</li>								
+								<li>
+									<a href="#">Date</a>
+								</li>
+							</ul>
+						</span>
+					</div>
+					<div class="panel-body row">
+						<table class="small-12 column" ng-repeat="project in projects | orderBy:'p_date':reverse=true">
+							<tr>
+								<td><b>{{project.p_name}}</b></td>
+								<td>{{project.purpose}}</td>
+								<td>{{project.p_date | date:'MMMM, yyyy'}}</td>
+							</tr>
+								<td colspan="3">
+									<ul class="fa-ul">
+										<li class="hover" ng-repeat="detail in p_details | filter:{p_id:project.p_id}">
+											<i class="fa-li fa fa-angle-right"></i>{{detail.description}}
+										</li>
+									</ul>
+								</td>
+							<tr>
+								<td colspan="2"><a ng-href="{{project.url}}">{{project.url}}</a></td>
+							</tr>
+						</table>
+					</div>
+
+				</div>
+
+				<a class="anchor" id="work"></a>
+				<div class="panel" ng-controller="workController">
+					<div class="panel-heading">
+						<i class="fa fa-building fa-lg"></i> Work Experience
+						<span class="right">							 
+							<a href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="dropdown">
+								Sort By <i class="fa fa-caret-down"></i>
+							</a> <i class="fa fa-sort-amount-asc"></i> <i class="fa fa-sort-amount-desc"></i> 
+							<br>
+							<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+								<li>
+									<a href="#">Company</a>
+								</li>
+								<li>
+									<a href="#">Start Date</a>
+								</li>
+								<li>
+									<a href="#">End Date</a>
+								</li>
+							</ul>
+						</span>
+					</div>
+					<div class="panel-body row">
+						<table class="small-12 column" ng-repeat="w in work | orderBy:'date_from':reverse=true">
+							<tr>
+								<td><b>{{w.company_name}}</b></td>
+								<td>{{w.location}}</td>
+								<td>{{w.date_from | date:'MMMM, yyyy'}} to {{w.date_to | date:'MMMM, yyyy' | nullToPresent }}</td>
+							</tr>
+							<tr>
+								<td colspan="2"><i>{{w.title}}</i></td>
+							</tr>
+
+							<tr ng-repeat="detail in w_details">
+								<td>{{detail}}</td>
+							</tr>
+						</table>
+					</div>
+
+				</div>
+
+				<a class="anchor" id="education"></a>
+				<div class="panel" ng-controller="educationController">
+					<div class="panel-heading">
+						<i class="fa fa-mortar-board fa-lg"></i> Education
+						<span class="right">
+														<a href="#" data-dropdown="drop2" aria-controls="drop1" aria-expanded="false" class="dropdown">
+								Sort By <i class="fa fa-caret-down"></i>
+							</a> <i class="fa fa-sort-amount-asc"></i> <i class="fa fa-sort-amount-desc"></i>
+							<br>
+							<ul id="drop2" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+								<li>
+									<a href="#">School</a>
+								</li>
+								<li>
+									<a href="#">Start Date</a>
+								</li>
+								<li>
+									<a href="#">End Date</a>
+								</li>								
+							</ul>		
+						</span>
+					</div>
+					<div class="panel-body row">
+						<table class="small-12 column" ng-repeat="e in edu | orderBy:'date_from':reverse=true">
+							<tr>
+								<td><b>{{e.school_name}}</b></td>
+								<td>{{e.location}}</td>
+								<td>{{e.date_from | date:'MMMM, yyyy'}} to {{e.date_to | date:'MMMM, yyyy' | nullToPresent }}</td>
+							</tr>
+							<tr>
+								<td colspan="2"><i>{{e.program}}</i></td>
+							</tr>
+
+							<tr ng-repeat="detail in e_details">
+								<td>{{detail}}</td>
+							</tr>
+						</table>
+					</div>
+
+				</div>
+
+				<a class="anchor" id="hobbies" ng-controller="contentController"></a>
+				<div class="panel">
+					<div class="panel-heading">
+						<i class="fa fa-coffee fa-lg"></i> Hobbies
+					</div>
+					<div class="panel-body">
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!--Scripts-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular.min.js"></script>
+		<script src="js/vendor/jquery.js"></script>
+		<script src="js/foundation.min.js"></script>
+		<script src="js/app.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
+	</body>
+</html>

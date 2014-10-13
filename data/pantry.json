@@ -1,0 +1,39 @@
+[
+	{
+		"foodName": "Chips",
+		"foodDescription": "Ketchup chips, PC brand",
+		"amount": "5 bags",
+		"lastPurhcased": "Jan 1, 2014"
+	}
+	{
+		"foodName": "Chips",
+		"foodDescription": "BBQ chips, PC brand",
+		"amount": "4 bags",
+		"lastPurhcased": "Jan 1, 2014"
+	}
+	{
+		"foodName": "Candy",
+		"foodDescription": "COla candy",
+		"amount": "a lot",
+		"lastPurhcased": "Jan 1, 2014"
+	}
+	{
+		"foodName": "Carrots",
+		"foodDescription": "organic",
+		"amount": "some",
+		"lastPurhcased": "Jan 1, 2014"
+	}
+	{
+		"foodName": "Apples",
+		"foodDescription": "green",
+		"amount": "5 bags",
+		"lastPurhcased": "Jan 1, 2014"
+	}
+	{
+		"foodName": "Sauce",
+		"foodDescription": "Ketchup",
+		"amount": "little",
+		"lastPurhcased": "Jan 1, 2014"
+	}
+	
+]
