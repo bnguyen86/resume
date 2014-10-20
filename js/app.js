@@ -1,4 +1,4 @@
-var resumeApp = angular.module('resumeApp',[]);
+var resumeApp = angular.module('resumeApp',['ui.unique']);
 
   
 resumeApp.controller('contentController', ['$scope', function($scope) {
@@ -37,10 +37,56 @@ resumeApp.controller('skillsController', ['$scope', '$http', function($scope, $h
 resumeApp.controller('projectsController', ['$scope', '$http', function($scope, $http) {
 	$scope.projects = null;
 	$scope.p_details = null;
+	$scope.p_skills = null;
+	$scope.filterArr = [];
+	$scope.filterBySkill = function(item){
+		var index = $scope.filterArr.indexOf(item);
+			if(index >= 0)
+				$scope.filterArr.splice(index,1);
+
+			else{
+				$scope.filterArr.push(item);
+			}
+		for(var i=0;i < $scope.projects.length; i++){
+			for(var j=0; j< $scope.filterArr.length; j++){
+				if($scope.projects[i].skills.indexOf($scope.filterArr[j]) >= 0){
+					$scope.projects[i].filtered = true;
+					break;
+				}
+				else $scope.projects[i].filtered = false;
+			}
+		}
+
+		if($scope.filterArr.length <= 0){
+			for(var i=0;i < $scope.projects.length; i++){
+				$scope.projects[i].filtered = true;
+			}
+		}	
+	};
 	
 	$http.post('/resume/query/', {list: "projects-catagory"}).
 		success(function(data, status, headers, config){
 			$scope.projects = data;
+			$http.post('/resume/query/', {list: "projects-skills"}).
+				success(function(data, status, headers, config){
+					$scope.p_skills = data;
+					for(var i = 0; i < $scope.projects.length; i++){
+						var skillsArr = [];
+
+						for(var j = 0; j < $scope.p_skills.length; j++)
+							if($scope.projects[i].p_id == $scope.p_skills[j].p_id){
+						 		skillsArr.push($scope.p_skills[j].s_name);
+						 	}
+
+						$scope.projects[i].skills = skillsArr;
+						$scope.projects[i].filtered = true;
+					}
+
+
+				}).
+				error(function(data, status, headers, config) {
+
+				});
 		}).
 		error(function(data, status, headers, config) {
 
@@ -53,6 +99,7 @@ resumeApp.controller('projectsController', ['$scope', '$http', function($scope, 
 		error(function(data, status, headers, config) {
 
 		});
+
   
 }]);
 

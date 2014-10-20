@@ -8,14 +8,14 @@ var url = require('url');
 var mysql      = require('mysql');
 var connectionPool = mysql.createPool({
   connectionLimit	: 10,
-  host    			: 'localhost',
+  host    			: '192.168.1.71',
   port	   			: '3307',
   user     			: 'bnguyen',
   password 			: 'b963210409',
   database 			: 'resume'
   
 });
-
+//http://192.168.1.71:3307/
 var bodyParser = require('./node_modules/body-parser');
 	 var textParser = bodyParser.json();
 
@@ -26,7 +26,7 @@ app.use(express.static('./'));
 
 app.use('/resume/query/',textParser, function(req,res){
 	
-	var queryString;
+	var queryString = "";
 	  console.log(req.body.list);
 	  if(req.body.list == "skill-detail") queryString = "select * from skills";
 	  	else if(req.body.list == "skill-catagory") queryString = "select sm_name from skills_major";
@@ -36,6 +36,7 @@ app.use('/resume/query/',textParser, function(req,res){
 	  	else if(req.body.list == "work-detail") queryString = "select * from work_desc";
 	  	else if(req.body.list == "projects-catagory") queryString = "select * from projects";
 	  	else if(req.body.list == "projects-detail") queryString = "select * from project_desc";
+	  	else if(req.body.list == "projects-skills") queryString = "select * from project_skill";
 	  	
 	  	console.log("queryString: " + queryString);
 	  	

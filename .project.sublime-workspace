@@ -3,10 +3,58 @@
 	{
 		"selected_items":
 		[
+			[
+				"filter",
+				"filterArr"
+			],
+			[
+				"skills",
+				"skillsArr"
+			],
+			[
+				"skill",
+				"skillsArr"
+			],
+			[
+				"margin",
+				"margin-right"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 2133,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/app.css",
+			"settings":
+			{
+				"buffer_size": 2165,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 10077,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/app.js",
+			"settings":
+			{
+				"buffer_size": 4872,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -27,7 +75,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 458.0
+		"width": 498.0
 	},
 	"console":
 	{
@@ -47,12 +95,17 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/C/Users/Benjamin/OneDrive/workspace/Personal Site"
-	],
 	"file_history":
 	[
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/Todo.todo",
+		"/C/Users/Benjamin/OneDrive/Sublime Text Build 3065 x64/Data/Packages/ToDone/readme.todo",
+		"/C/Users/Benjamin/OneDrive/Sublime Text Build 3065 x64/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Benjamin/OneDrive/Sublime Text Build 3065 x64/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Benjamin/OneDrive/Sublime Text Build 3065 x64/Data/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/less/spinning.less",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/less/stacked.less",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/node_modules/mysql/lib/protocol/packets/HandshakeInitializationPacket.js",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/node_modules/express/node_modules/cookie-signature/Makefile",
 		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/server.js",
 		"/C/Users/Benjamin/Desktop/Sublime Text Build 3065 x64/Data/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Benjamin/Desktop/Sublime Text Build 3065 x64/Data/Packages/User/Monokai (SL).tmTheme",
@@ -60,7 +113,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 46.0
 	},
 	"find_in_files":
 	{
@@ -74,6 +127,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"75em",
+			"5em",
+			"ul id=",
+			"class=\"right",
+			"Testing",
+			"									<",
+			">\n",
+			"=\"\">"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -91,14 +152,154 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2133,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								173
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 84.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "css/app.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2044,
+								2044
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1624.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8163,
+								8163
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3140.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4872,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1283,
+								1283
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -113,16 +314,36 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.703773500299,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
+			0.440634595701,
 			1.0
 		]
 	},
@@ -131,10 +352,14 @@
 	{
 		"height": 0.0
 	},
+	"output.git":
+	{
+		"height": 102.0
+	},
 	"project": ".project.sublime-workspace",
 	"replace":
 	{
-		"height": 0.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -144,7 +369,7 @@
 		[
 			[
 				"",
-				"Package Control Messages"
+				"index.html"
 			],
 			[
 				"pack",
@@ -169,7 +394,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 2,
 	"settings":
 	{
 	},
@@ -177,7 +402,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 243.0,
+	"side_bar_width": 63.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
