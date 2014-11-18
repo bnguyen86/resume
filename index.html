@@ -251,13 +251,17 @@
 
 				</div>
 
-				<a class="anchor" id="hobbies" ng-controller="contentController"></a>
-				<div class="panel">
+				<a class="anchor" id="hobbies"></a>
+				<div class="panel" ng-controller="hobbiesController">
 					<div class="panel-heading">
 						<i class="fa fa-coffee fa-lg"></i> Hobbies
 					</div>
 					<div class="panel-body">
-
+						<table class="small-12 column">
+							<tr ng-repeat="h in hobbies">
+								<td>{{h.description}}</td>
+							</tr>
+						</table>
 					</div>
 
 				</div>

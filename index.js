@@ -8,7 +8,7 @@ var url = require('url');
 var mysql      = require('mysql');
 var connectionPool = mysql.createPool({
   connectionLimit	: 10,
-  host    			: '192.168.1.71',
+  host    			: 'localhost',
   port	   			: '3307',
   user     			: 'bnguyen',
   password 			: 'b963210409',
@@ -37,6 +37,7 @@ app.use('/resume/query/',textParser, function(req,res){
 	  	else if(req.body.list == "projects-catagory") queryString = "select * from projects";
 	  	else if(req.body.list == "projects-detail") queryString = "select * from project_desc";
 	  	else if(req.body.list == "projects-skills") queryString = "select * from project_skill";
+	  	else if(req.body.list == "hobbies") queryString = "select * from hobbies";
 	  	
 	  	console.log("queryString: " + queryString);
 	  	

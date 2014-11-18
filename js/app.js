@@ -146,24 +146,16 @@ resumeApp.controller('educationController', ['$scope', '$http', function($scope,
 }]);
 
 resumeApp.controller('hobbiesController', ['$scope', '$http', function($scope, $http) {
-	$scope.projects = null;
-	$scope.p_details = null;
+	$scope.hobbies = null;
 	
-	$http.post('/resume/query/', {list: "projects-catagory"}).
+	$http.post('/resume/query/', {list: "hobbies"}).
 		success(function(data, status, headers, config){
-			$scope.projects = data;
+			$scope.hobbies = data;
 		}).
 		error(function(data, status, headers, config) {
 
 		});
-		
-	$http.post('/resume/query/', {list: "projects-detail"}).
-		success(function(data, status, headers, config){
-			$scope.p_details = data;
-		}).
-		error(function(data, status, headers, config) {
 
-		});
 }]);
 
 
